@@ -86,6 +86,7 @@ Multiple Complex Filters can be chained using the `ALSO` keyword.  A Query match
 
 *Note that following the ALSO keyword, another Complex Filter must immediately follow, NOT an Action keyword.*
 
+<br />
 
 ##### Filter Parsing
 Filter Groups are self-delimiting. A Filter Group ends when another Filter Group keyword, the ALSO keyword, or the end of the query is encountered.
@@ -146,7 +147,7 @@ Filter values MUST be a STANAG 1059 Edition 9 compliant 3 letter code.  See http
 
 ###### Filter Group: CLASSIFICATION
 
-Filter values MUST be a 20 digit SIDC compliant string as defined in MIL-STD-2525D.  See https://a44074a4-8852-4e80-9d62-09098560709e.s3.eu-north-1.amazonaws.com/ArchitectsLounge/MIL-STD-2525D.pdf for more information.
+Filter values MUST be a 6 digit integer representing Entity, Entity Type and Entity Subtype as defined in MIL-STD-2525D Appendix A.5.4 Set B.  Values MUST NOT be longer than 6 digits and will not include Modifier 1 or Modifier 2 as detailed in MIL-STD-2525D.  See https://a44074a4-8852-4e80-9d62-09098560709e.s3.eu-north-1.amazonaws.com/ArchitectsLounge/MIL-STD-2525D.pdf for more information.
 
 <br />
 
