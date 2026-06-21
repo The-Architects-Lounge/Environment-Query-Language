@@ -185,6 +185,79 @@ An implementation is considered EQL compliant if it:
 3.  Correctly evaluates Filter Groups according to the Query Evaluation rules.
 4.  Correctly maps internal data structures to EQL Filter Groups and Filter Values.
 5.  Treats commands and values as case-insensitive.
+6.  An implementation SHOULD declare the highest EQL version it supports.
+<br />
+
+## Versioning
+
+EQL follows Semantic Versioning (SemVer).  Version numbers take the form:
+
+MAJOR.MINOR.PATCH
+
+Examples:
+
+1.0.0
+1.1.0
+2.0.0
+
+<br />
+
+### Major Version
+
+A major version change indicates a breaking change to the EQL specification.  Implementations compliant with one major version are not guaranteed to be compatible with another major version.  Examples include:
+
+* Removal of a Filter Group
+* Removal of a Filter Value
+* Changes to query evaluation behaviour
+* Changes to grammar or syntax
+
+<br />
+
+### Minor Version
+
+A minor version change indicates backwards-compatible additions.  Examples include:
+
+* New Filter Groups
+* New Filter Values
+* Additional Actions
+* Clarifications to existing behaviour
+
+<br />
+
+### Patch Version
+
+A patch version change indicates documentation updates, clarifications, corrections, or non-functional changes.  Patch releases MUST NOT modify the behaviour of valid EQL queries.
+
+<br />
+
+### Example
+
+EQL Version: 1.0.0
+
+<br />
+
+## Error Handling
+Implementations MUST reject invalid EQL queries and MUST NOT attempt to infer, correct, or modify invalid queries.
+
+### Invalid Queries
+A query is invalid if:
+
+* An unknown Action is specified
+* An unknown Target is specified
+* An unknown Filter Group is specified
+* An unknown Filter Value is specified
+* A parameterised filter is malformed
+* Required parameters are missing
+* Keywords appear in an invalid order
+* A query terminates unexpectedly
+
+<br />
+
+### Error Reporting
+Implementations SHOULD provide a human-readable error message indicating:
+* The position of the error
+* The offending token
+* The reason the query is invalid
 
 <br />
 
