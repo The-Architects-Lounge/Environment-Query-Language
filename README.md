@@ -155,7 +155,7 @@ Filter values MUST be a 6 digit integer representing Entity, Entity Type and Ent
 
 This is a 'parameterised' filter:
 
-    LOCATION [INSIDE | OUTSIDE | WITHIN] Distance OF Latitude/Longitude
+    LOCATION [WITHIN | NOTWITHIN | ABOVE | BELOW] Distance [OF Latitude/Longitude]
 
 Following the LOCATION keyword, one the following Valid Filter Values MUST come next:
 * WITHIN
