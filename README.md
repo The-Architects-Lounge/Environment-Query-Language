@@ -158,14 +158,15 @@ This is a 'parameterised' filter:
     LOCATION [INSIDE | OUTSIDE | WITHIN] Distance OF Latitude/Longitude
 
 Following the LOCATION keyword, one the following Valid Filter Values MUST come next:
-* INSIDE
-* OUTSIDE
 * WITHIN
+* NOTWITHIN
+* ABOVE
+* BELOW
 
 This must then be followed by, in order and separated with White-Space:
-1) A whole number represented as Meters
-2) The keyword "OF"
-3) Two decimal point numbers representing Decimal Degrees in the format [Latitude Longitude] 
+1) A decimal number represented as Meters.  If the keyword preceding this is WITHIN or NOTWITHIN, then the next steps are required.  If the keyword preceding this is ABOVE or BELOW, the decimal number terminates the Location Value. 
+2) The keyword "OF".
+3) Two decimal point numbers representing Decimal Degrees in the format [Latitude Longitude].
 
 <br />
 
