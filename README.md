@@ -41,6 +41,7 @@ Commands and values are separated by a single white-space.  All Commands and ava
 ### Syntax
 #### Action
 Every EQL command starts with an "Action" - one of the ACTION Filter Groups:
+
 	    `FIND | HIDE | COUNT | COUNTNOT`
 
 This defines what the query will do with the full dataset:
@@ -53,6 +54,7 @@ This defines what the query will do with the full dataset:
 
 #### Target
 This will always be followed by the "Target" - one of the TARGET Filter Groups:
+
 	    `UNIT | GROUP | LOCATION `
 
 Defines what you are expecting back from the system being queried.
@@ -68,9 +70,11 @@ A value after the used Target keyword will always be a Filter Group
 Multiple Filter Groups can be used together and multiple Filter Values can be used for each Filter Group.  A Filter Group is processed as a whole.  Multiple Complex Filters can be separated by "ALSO".  A combination of multiple Filter Groups, with Filter Values makes a Complex Filter. 
 
 Filter Values are always assessed with an 'or' condition:
+
 	`DIMENSION Land [or] Air [or] Sea`
 
 Filter Groups are always assessed with an "and" condition:
+
 	`DIMENSION Land [or] Air [and] IDENTITY Hostile`
 
 <br />
@@ -130,6 +134,19 @@ Valid Filter Values:
 * Hidden
 * Static
 * Moving
+
+<br />
+
+###### Filter Group: COUNTRY
+
+Filter values MUST be a STANAG 1059 Edition 9 compliant 3 letter code.  See https://github.com/odskee/MilDocs/blob/main/STANAG%201059.pdf for more details.
+
+<br />
+
+
+###### Filter Group: CLASSIFICATION
+
+Filter values MUST be a 20 digit SIDC compliant string as defined in MIL-STD-2525D.  See https://a44074a4-8852-4e80-9d62-09098560709e.s3.eu-north-1.amazonaws.com/ArchitectsLounge/MIL-STD-2525D.pdf for more information.
 
 <br />
 
